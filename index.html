@@ -208,6 +208,7 @@ h1 .l2{display:block;letter-spacing:calc(-3.584 * var(--u));transform:translateX
   .cards .c3{animation:total-panel .76s cubic-bezier(.2,.8,.2,1) 1.21s backwards}
 }
 :focus-visible{outline:2px solid var(--arrow);outline-offset:2px}
+html.entry-complete :is(.nav .logo,.links a,.nav .actions,.hero .rating,.hero h1,.hero .lede,.hero .cta .btn,.cards .c1,.cards .c2,.cards .c3){animation:none!important}
 </style>
 </head>
 <body>
@@ -291,5 +292,6 @@ function sync(){var x=rail.scrollLeft,best=0,d=1e9;cards.forEach(function(c,i){v
 rail.addEventListener('scroll',function(){requestAnimationFrame(sync)},{passive:true});
 dots.forEach(function(t,i){t.addEventListener('click',function(){rail.scrollTo({left:cards[i].offsetLeft-rail.offsetLeft-parseFloat(getComputedStyle(rail).paddingLeft),behavior:'smooth'})})});})();
 </script>
+<script>setTimeout(function(){document.documentElement.classList.add("entry-complete")},2300)</script>
 </body>
 </html>
